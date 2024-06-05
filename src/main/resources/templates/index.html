@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+
+<h1>Anderlechtse gazette</h1>
+
+    <div class="empty" th:if="${lastTen.isEmpty()}" >
+        Er is geen artikel
+    </div>
+
+
+    <div class="list" th:unless="${lastTen.isEmpty()}">
+        <p>Tien laaste artikles</p>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Reporter Name</th>
+                <th>Details</th>
+            </tr>
+            <tr th:each="article : ${lastTen}">
+                <td th:text="${article.name}"></td>
+                <td th:text="${article.reporterName}"></td>
+                <td><a th:href="@{/details/{id}(id = ${article.id})}">Details</a></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+
+</body>
+</html>

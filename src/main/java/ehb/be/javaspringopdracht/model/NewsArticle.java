@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
@@ -28,6 +29,7 @@ public class NewsArticle {
     private String reporterEmail;
 
     @CreationTimestamp
+    @DateTimeFormat(pattern = "dd-MM-yyy HH:mm:ss")
     private LocalDateTime dateCreated;
 
 
