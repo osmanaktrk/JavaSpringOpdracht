@@ -2,17 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Details</title>
 </head>
 <body>
 
 
 
+
+<div>
     <h1 th:text="${article.name}">Title</h1>
     <p>Category: <span th:text="${article.category}">Category</span></p>
     <p>Content: <span th:text="${article.content}">Content</span></p>
     <p>Reporter Name: <span th:text="${article.reporterName}">Reporter Name</span></p>
-    <p>Reporter Email: <span th:text="${article.reporterEmail}">Reporter Email</span></p>
+    <p>Reporter E-mail: <span th:text="${article.reporterEmail}">Reporter Email</span></p>
+
+</div>
 
 
 

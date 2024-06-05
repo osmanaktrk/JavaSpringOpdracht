@@ -51,7 +51,7 @@ public class NewsArticleController {
     }
 
     @ModelAttribute("newArticle")
-    public NewsArticle toSave(){
+    public NewsArticle save(){
         return new NewsArticle();
     }
 
@@ -63,15 +63,6 @@ public class NewsArticleController {
         return "index";
     }
 
-    @PostMapping(value = {"/", "/index"})
-    public String save(@ModelAttribute("newArticle") @Valid NewsArticle newArticle, BindingResult bindingResult){
-
-        if(bindingResult.hasErrors()){
-            return "index";
-        }
-        newsArticleDAO.save(newArticle);
-        return "redirect:/index";
-    }
 
     @GetMapping("/details/{id}")
     public String details(@PathVariable int id, ModelMap map){
@@ -84,6 +75,21 @@ public class NewsArticleController {
         return "redirect:/index";
     }
 
+
+    @GetMapping("/new")
+    public String showNew(){
+        return "new";
+    }
+
+    @PostMapping("/new")
+    public String makeArticle(@ModelAttribute("newArticle")@Valid NewsArticle toSave, BindingResult bindingResult){
+
+        if(bindingResult.hasErrors()){
+            return "new";
+        }
+        newsArticleDAO.save(toSave);
+        return "redirect:/index";
+    }
 
 
 }

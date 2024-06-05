@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Article</title>
+</head>
+<body>
+
+<h1>New</h1>
+
+
+<form method="post" th:action="@{/new}" th:object="${newArticle}">
+    <label>
+        Title:
+        <input type="text" th:field="*{name}">
+    </label>
+    <span class="error" th:if="${#fields.hasErrors('name')}" th:text="${#fields.errors('name')}"></span>
+
+    <br><br>
+    <label>
+        Category:
+        <input type="text" th:field="*{category}">
+    </label>
+    <span class="error" th:if="${#fields.hasErrors('category')}" th:text="${#fields.errors('category')}"></span>
+
+    <br><br>
+    <label>
+        Content:
+        <textarea th:field="*{content}" ></textarea>
+    </label>
+    <span class="error" th:if="${#fields.hasErrors('content')}" th:text="${#fields.errors('content')}"></span>
+
+    <br><br>
+    <label>
+        Reporter Name:
+        <input type="text" th:field="*{reporterName}">
+    </label>
+    <span class="error" th:if="${#fields.hasErrors('reporterName')}" th:text="${#fields.errors('reporterName')}"></span>
+
+    <br><br>
+    <label>
+        Reporter E-mail:
+        <input type="email" th:field="*{reporterEmail}">
+    </label>
+    <span class="error" th:if="${#fields.hasErrors('reporterEmail')}" th:text="${#fields.errors('reporterEmail')}"></span>
+
+    <br><br>
+    <input type="submit" value="SUBMIT">
+
+
+</form>
+
+</body>
+</html>
