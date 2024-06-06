@@ -1,0 +1,32 @@
+.empty{
+    display: block;
+    text-align: center;
+    padding: 50px;
+    margin: 50px;
+}
+.empty>p{
+    font-size: 50px;
+}
+
+.list{
+    padding: 20px;
+    text-align: center;
+
+}
+
+.list>h3{
+    display: block;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+
+}
+
+table>tr, th, td{
+    padding: 5px;
+    border: 2px solid black;
+}

@@ -51,7 +51,7 @@ public class NewsArticleController {
     }
 
     @ModelAttribute("newArticle")
-    public NewsArticle save(){
+    public NewsArticle saveNew(){
         return new NewsArticle();
     }
 
@@ -65,7 +65,7 @@ public class NewsArticleController {
 
 
     @GetMapping("/details/{id}")
-    public String details(@PathVariable int id, ModelMap map){
+    public String getDetails(@PathVariable int id, ModelMap map){
         Optional<NewsArticle> article = newsArticleDAO.findById(id);
         if(article.isPresent()){
             map.addAttribute("article", article.get());
@@ -89,6 +89,16 @@ public class NewsArticleController {
         }
         newsArticleDAO.save(toSave);
         return "redirect:/index";
+    }
+
+    @GetMapping("/about")
+    public String showAbout(){
+        return "about";
+    }
+
+    @GetMapping("/all")
+    public String showAll(ModelMap map){
+        return "all";
     }
 
 

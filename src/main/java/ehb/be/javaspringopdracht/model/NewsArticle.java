@@ -1,9 +1,6 @@
 package ehb.be.javaspringopdracht.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,7 +21,9 @@ public class NewsArticle {
     @NotBlank
     private String category;
 
+
     @NotBlank
+    @Column(columnDefinition = "text")
     private String content;
 
     @NotBlank

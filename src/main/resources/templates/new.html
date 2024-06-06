@@ -3,52 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <title>New Article</title>
+    <link rel="stylesheet" th:href="@{/new.css}">
+    <link rel="stylesheet" th:href="@{/templates.css}">
 </head>
 <body>
 
-<h1>New</h1>
+<div th:replace="~{templates::header}" class="header"></div>
 
 
-<form method="post" th:action="@{/new}" th:object="${newArticle}">
-    <label>
-        Title:
-        <input type="text" th:field="*{name}">
-    </label>
-    <span class="error" th:if="${#fields.hasErrors('name')}" th:text="${#fields.errors('name')}"></span>
 
-    <br><br>
-    <label>
-        Category:
-        <input type="text" th:field="*{category}">
-    </label>
-    <span class="error" th:if="${#fields.hasErrors('category')}" th:text="${#fields.errors('category')}"></span>
-
-    <br><br>
-    <label>
-        Content:
-        <textarea th:field="*{content}" ></textarea>
-    </label>
-    <span class="error" th:if="${#fields.hasErrors('content')}" th:text="${#fields.errors('content')}"></span>
-
-    <br><br>
-    <label>
-        Reporter Name:
-        <input type="text" th:field="*{reporterName}">
-    </label>
-    <span class="error" th:if="${#fields.hasErrors('reporterName')}" th:text="${#fields.errors('reporterName')}"></span>
-
-    <br><br>
-    <label>
-        Reporter E-mail:
-        <input type="email" th:field="*{reporterEmail}">
-    </label>
-    <span class="error" th:if="${#fields.hasErrors('reporterEmail')}" th:text="${#fields.errors('reporterEmail')}"></span>
-
-    <br><br>
-    <input type="submit" value="SUBMIT">
+<main>
+    <h2>New Article</h2>
+    <form method="post" th:action="@{/new}" th:object="${newArticle}">
+        <label>
+            Title: <span class="error" th:if="${#fields.hasErrors('name')}" th:text="${#fields.errors('name')}"></span>
+            <br>
+            <input class="input" type="text" th:field="*{name}">
+        </label>
 
 
-</form>
+        <br><br>
+        <label>
+            Category:  <span class="error" th:if="${#fields.hasErrors('category')}" th:text="${#fields.errors('category')}"></span>
+
+            <br>
+            <input class="input" type="text" th:field="*{category}">
+        </label>
+
+
+        <br><br>
+        <label>
+            Reporter Name: <span class="error" th:if="${#fields.hasErrors('reporterName')}" th:text="${#fields.errors('reporterName')}"></span>
+
+            <br>
+            <input class="input" type="text" th:field="*{reporterName}">
+        </label>
+
+        <br><br>
+        <label>
+            Reporter E-mail: <span class="error" th:if="${#fields.hasErrors('reporterEmail')}" th:text="${#fields.errors('reporterEmail')}"></span>
+
+            <br>
+            <input class="input" type="email" th:field="*{reporterEmail}">
+        </label>
+
+        <br><br>
+        <label>
+            Content: <span class="error" th:if="${#fields.hasErrors('content')}" th:text="${#fields.errors('content')}"></span>
+
+            <br>
+            <textarea th:field="*{content}" ></textarea>
+        </label>
+
+        <br><br>
+        <input type="submit" value="SUBMIT">
+
+
+    </form>
+</main>
+
+<div th:replace="~{templates::footer}" class="footer"></div>
 
 </body>
 </html>

@@ -1,0 +1,25 @@
+main{
+    display: block;
+    text-align: center;
+}
+
+main>h2{
+
+    text-align: center;
+}
+
+
+.input{
+    width: 300px;
+    height: 30px;
+}
+
+textarea{
+    width: 300px;
+    height: 200px;
+}
+
+.error{
+    color: red;
+    display: inline-block;
+}

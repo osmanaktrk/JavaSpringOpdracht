@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+
+<div th:fragment="header" class="header">
+    <h1>Anderlechtse Gazette</h1>
+    <nav>
+        <a th:href="@{/index}">Index</a>
+        <a th:href="@{/new}">New Article</a>
+        <a th:href="@{/about}">About</a>
+        <a th:href="@{/all}">All Article</a>
+
+    </nav>
+</div>
+
+
+<div th:fragment="footer" class="footer">
+    <p>All rights reserved</p>
+</div>
+
+</html>

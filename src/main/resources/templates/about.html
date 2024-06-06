@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" th:href="@{/about.css}">
+    <link rel="stylesheet" th:href="@{/templates.css}">
+</head>
+<body>
+
+<div th:replace="~{templates::header}" class="header"></div>
+
+<main>
+
+
+    <p><span class="head">Address: </span>Lorem Ipsumstraat 123, 1000 Brussel</p>
+
+    <p><span class="head">Contact: </span>info@anderlechtsegazette.be</p>
+    <p><span class="head">Description: </span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus non lobortis dolor, sed viverra lorem. Sed gravida non ligula at pretium. Nulla laoreet ligula sed dictum commodo. Aenean commodo ligula nunc, ut porta neque fermentum quis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis facilisis ligula. Donec sit amet elit non sapien molestie porta. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Curabitur pharetra mi nec leo lacinia, eget aliquam turpis mollis. Pellentesque ornare at sem ut ullamcorper. Sed tincidunt tortor cursus, vestibulum turpis eu, tempor lorem.</p>
+</main>
+
+<div th:replace="~{templates::footer}" class="footer"></div>
+
+</body>
+</html>

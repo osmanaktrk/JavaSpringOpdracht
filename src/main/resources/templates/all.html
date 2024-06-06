@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th = "http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
-    <link rel="stylesheet" th:href="@{/index.css}">
+    <title>All Articles</title>
+    <link rel="stylesheet" th:href="@{/all.css}">
     <link rel="stylesheet" th:href="@{/templates.css}">
 </head>
 <body>
@@ -16,20 +16,21 @@
 
 
 
-    <div class="empty" th:if="${lastTen.isEmpty()}" >
+    <div class="empty" th:if="${all.isEmpty()}" >
         <p>There Is No Article</p>
+
     </div>
 
 
-    <div class="list" th:unless="${lastTen.isEmpty()}">
-        <h3>The Last 10 Articles</h3>
+    <div class="list" th:unless="${all.isEmpty()}">
+        <h3>All Articles</h3>
         <table>
             <tr>
                 <th>Title</th>
                 <th>Reporter Name</th>
                 <th>Details</th>
             </tr>
-            <tr th:each="article : ${lastTen}">
+            <tr th:each="article : ${all}">
                 <td th:text="${article.name}"></td>
                 <td th:text="${article.reporterName}"></td>
                 <td><a th:href="@{/details/{id}(id = ${article.id})}">Details</a></td>
@@ -39,10 +40,7 @@
 
     </div>
 
-    <div class="links">
-        <a class="new" th:href="@{/new}">New Article</a>
-        <a class="all" th:href="@{/all}">All Article</a>
-    </div>
+
 
 
 

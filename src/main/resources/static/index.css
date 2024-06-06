@@ -1,0 +1,57 @@
+.empty{
+    display: block;
+    text-align: center;
+    padding: 50px;
+    margin: 50px;
+}
+.empty>p{
+    font-size: 50px;
+}
+.list{
+    padding: 20px;
+    text-align: center;
+
+}
+
+.list>h3{
+    display: block;
+    text-align: center;
+}
+
+table{
+    margin: auto;
+    border: 2px solid black;
+    padding: 10px;
+
+}
+
+table>tr, th, td{
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.links{
+    display: block;
+    text-align: center;
+    margin: 10px;
+}
+
+.new{
+    text-decoration: none;
+    border: 2px transparent;
+    padding: 10px;
+    background: orange;
+    border-radius: 20px;
+
+
+}
+
+.all{
+    text-decoration: none;
+    border: 2px transparent;
+    padding: 10px;
+    background: orangered;
+    border-radius: 20px;
+
+}
+
