@@ -34,7 +34,6 @@ public class NewsArticle {
     private String reporterEmail;
 
     @CreationTimestamp
-    @DateTimeFormat(pattern = "dd-MM-yyy HH:mm:ss")
     private LocalDateTime dateCreated;
 
 
