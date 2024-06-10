@@ -33,19 +33,7 @@ public class NewsArticleController {
 
     @ModelAttribute("lastTen")
     public Iterable<NewsArticle> findLastTen(){
-        List<NewsArticle> last = newsArticleDAO.findAllCronologic();
-        List<NewsArticle> lastTen = new ArrayList<>();
-
-        if(!last.isEmpty()){
-            if (last.size()>9){
-                for (int i = 0; i < 10; i++) {
-                    lastTen.add(last.get(i));
-
-                }
-            }else{
-                lastTen.addAll(last);
-            }
-        }
+        List<NewsArticle> lastTen = newsArticleDAO.findAllCronologic();
 
         return lastTen;
     }

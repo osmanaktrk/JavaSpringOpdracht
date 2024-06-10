@@ -9,6 +9,6 @@ import java.util.List;
 
 public interface NewsArticleDAO extends CrudRepository<NewsArticle, Integer> {
 
-    @Query("SELECT n FROM NewsArticle n ORDER BY n.dateCreated DESC ")
+    @Query("SELECT n FROM NewsArticle n ORDER BY n.dateCreated DESC LIMIT 10 ")
     List<NewsArticle> findAllCronologic();
 }
