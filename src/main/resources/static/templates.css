@@ -32,7 +32,9 @@ nav > a{
     text-align: center;
     padding: 5px;
     font-size: larger;
-    display: block;
-    width: 100%;
+    width: 98%;
+    background-color: red;
+    border-radius: 25px;
+
 }
 
